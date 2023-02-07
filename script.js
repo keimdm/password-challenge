@@ -74,9 +74,10 @@ function generatePassword() {
   }
 
   //select a random character and appends it to the password output until password is at desired length
-
-  for (i = 0; i < length; i++) {
-    
+  for (i = 0; i < Number(length); i++) {
+    var randomCharSet = Math.floor(Math.random() * validChars.length);
+    var randomCharacter = Math.floor(Math.random() * validChars[randomCharSet].length);
+    passwordOutput = passwordOutput + validChars[randomCharSet][randomCharacter];
   }
 
   return passwordOutput;

@@ -57,6 +57,29 @@ function generatePassword() {
   let refUpperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   let refNumber = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
   let refSpecChar = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", ".", ",", "/", "?", "[", "]", "<", ">"];
+  
+  //create array of valid character lists
+  var validChars = [];
+  if (lowerChar) {
+    validChars.append(refLowerCase);
+  }
+  if (upperChar) {
+    validChars.append(refUpperCase);
+  }
+  if (numChar) {
+    validChars.append(refNumber);
+  }
+  if (specChar) {
+    validChars.append(refSpecChar);
+  }
+
+  //select a random character and appends it to the password output until password is at desired length
+
+  for (i = 0; i < length; i++) {
+    
+  }
+
+  return passwordOutput;
 }
 
 // Add event listener to generate button

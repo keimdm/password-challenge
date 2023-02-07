@@ -3,7 +3,6 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  console.log("write password");
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
@@ -12,11 +11,9 @@ function writePassword() {
 
 function generatePassword() {
   //use while loop to allow user to try again in case of invalid input without starting the whole process over
-  console.log("generate password");
   var length;
   var validLength = false;
   while (validLength === false) {
-    console.log("while loop");
     //get length input
     length = window.prompt("Please enter desired length of password (8-128).", "");
     //validate length input - stop process if number out of range, or if input is a non-numeric string

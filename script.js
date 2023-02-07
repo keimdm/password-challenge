@@ -3,6 +3,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
+  console.log("write password");
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
@@ -11,15 +12,16 @@ function writePassword() {
 
 function generatePassword() {
   //use while loop to allow user to try again in case of invalid input without starting the whole process over
+  console.log("generate password");
   var length;
   var validLength = false;
-  while (validLength = false) {
+  while (validLength === false) {
+    console.log("while loop");
     //get length input
-    var length = prompt("Please enter desired length of password.", "");
+    length = window.prompt("Please enter desired length of password (8-128).", "");
     //validate length input - stop process if number out of range, or if input is a non-numeric string
-    if (length === "" || Number(length) < 8 || Number(length) > 128 || typeof Number(length) !== "number") {
-      window.alert("Password length must be between 8 and 128.");
-      return;
+    if (length === "" || Number(length) < 8 || Number(length) > 128 || parseInt(length) != Number(length)) {
+      window.alert("Password length must be a number between 8 and 128.");
     }
     else {
       validLength = true;
@@ -32,7 +34,7 @@ function generatePassword() {
   var numChar;
   var specChar;
   var validCharSelected = false;
-  while (validCharSelected = false) {
+  while (validCharSelected === false) {
      //confirm lowercase letters
     var lowerChar = confirm("Please confirm whether or not lowercase letters should be used.");
     //confirm uppercase letters
@@ -61,16 +63,16 @@ function generatePassword() {
   //create array of valid character lists
   var validChars = [];
   if (lowerChar) {
-    validChars.append(refLowerCase);
+    validChars.push(refLowerCase);
   }
   if (upperChar) {
-    validChars.append(refUpperCase);
+    validChars.push(refUpperCase);
   }
   if (numChar) {
-    validChars.append(refNumber);
+    validChars.push(refNumber);
   }
   if (specChar) {
-    validChars.append(refSpecChar);
+    validChars.push(refSpecChar);
   }
 
   //select a random character and appends it to the password output until password is at desired length
